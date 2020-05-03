@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D7150AC0245EF1CA00849E70 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150ABF245EF1CA00849E70 /* main.swift */; };
 		D7150AC7245EF1E900849E70 /* PetersonMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AC6245EF1E900849E70 /* PetersonMutex.swift */; };
+		D7150AC9245F017C00849E70 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AC8245F017C00849E70 /* SpinLock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		D7150ABC245EF1CA00849E70 /* OperationSystemStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OperationSystemStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7150ABF245EF1CA00849E70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D7150AC6245EF1E900849E70 /* PetersonMutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetersonMutex.swift; sourceTree = "<group>"; };
+		D7150AC8245F017C00849E70 /* SpinLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				D7150ABF245EF1CA00849E70 /* main.swift */,
 				D7150AC6245EF1E900849E70 /* PetersonMutex.swift */,
+				D7150AC8245F017C00849E70 /* SpinLock.swift */,
 			);
 			path = OperationSystemStudy;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7150AC9245F017C00849E70 /* SpinLock.swift in Sources */,
 				D7150AC0245EF1CA00849E70 /* main.swift in Sources */,
 				D7150AC7245EF1E900849E70 /* PetersonMutex.swift in Sources */,
 			);

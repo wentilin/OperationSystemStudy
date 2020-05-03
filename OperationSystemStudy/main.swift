@@ -19,3 +19,42 @@ queue.addOperation {
 }
 
 queue.waitUntilAllOperationsAreFinished()
+
+print("----------test spin lock------------")
+
+let test = SpinLockTest()
+queue.addOperation {
+    for _ in 0..<100 {
+        test.increase()
+    }
+}
+
+queue.addOperation {
+    for _ in 0..<100 {
+        test.decrease()
+    }
+}
+
+queue.waitUntilAllOperationsAreFinished()
+
+// value must be 0
+print("value: \(test.value)")
+
+class SpinLockTest {
+    var value: Int = 0
+    private let lock: SpinLock = .init()
+
+    func increase() {
+        lock.lock()
+        value += 1
+        lock.unlock()
+    }
+    
+    func decrease() {
+        lock.lock()
+        value -= 1
+        lock.unlock()
+    }
+}
+
+
