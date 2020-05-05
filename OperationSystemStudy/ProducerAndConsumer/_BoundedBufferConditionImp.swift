@@ -25,11 +25,11 @@ class _BoundedBufferConditionImp<C> {
     }
         
     func deposite(_ item: C) {
-        lock.lock()
-        
         while count == capacity {
             notFull.wait()
         }
+        
+        lock.lock()
         
         buffers.append(item)
         count += 1
@@ -39,11 +39,11 @@ class _BoundedBufferConditionImp<C> {
     }
     
     func remove() -> C {
-        lock.lock()
-        
         while count == 0 {
             notEmpty.wait()
         }
+        
+        lock.lock()
         
         let item = buffers.removeLast()
         count -= 1

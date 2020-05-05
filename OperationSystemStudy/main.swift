@@ -20,25 +20,28 @@ queue.addOperation {
 
 queue.waitUntilAllOperationsAreFinished()
 
+
+queue.maxConcurrentOperationCount = 10
+
 print("----------test spin lock------------")
 
-let test = SpinLockTest()
-queue.addOperation {
-    for _ in 0..<100 {
-        test.increase()
-    }
-}
-
-queue.addOperation {
-    for _ in 0..<100 {
-        test.decrease()
-    }
-}
-
-queue.waitUntilAllOperationsAreFinished()
+//let test = SpinLockTest()
+//queue.addOperation {
+//    for _ in 0..<100 {
+//        test.increase()
+//    }
+//}
+//
+//queue.addOperation {
+//    for _ in 0..<100 {
+//        test.decrease()
+//    }
+//}
+//
+//queue.waitUntilAllOperationsAreFinished()
 
 // value must be 0
-print("value: \(test.value)")
+//print("value: \(test.value)")
 
 class SpinLockTest {
     var value: Int = 0
@@ -71,7 +74,27 @@ queue.addOperation {
     for _ in 0..<10 {
         let item = boundedBuffer.remove()
         print("remove item(\(item))")
-        sleep(1)
+    }
+}
+
+queue.waitUntilAllOperationsAreFinished()
+
+
+print("----------test writer first monitor------------")
+
+let monitor = WriterFirstMonitor()
+// writers
+for i in 0..<10 {
+    queue.addOperation {
+        monitor.write(i)
+        print("monitor write item(\(i))")
+    }
+}
+
+// readers
+for _ in 0..<10 {
+    queue.addOperation {
+        print("monitor read item(\(monitor.read()))")
     }
 }
 
