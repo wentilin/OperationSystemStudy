@@ -1,14 +1,14 @@
 //
-//  BoundedBuffer.swift
+//  _BoundedBufferSemaphoreImp.swift
 //  OperationSystemStudy
 //
 //  Created by wentilin on 2020/5/5.
 //  Copyright © 2020 wentilin. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
-class BoundedBuffer<C> {
+class _BoundedBufferSemaphoreImp<C> {
     private let mutex: DispatchSemaphore
     private let fullBuffers: DispatchSemaphore
     private let emptyBuffers: DispatchSemaphore
@@ -22,7 +22,7 @@ class BoundedBuffer<C> {
         fullBuffers = .init(value: 0)
         emptyBuffers = .init(value: capacity)
     }
-    
+        
     func deposite(_ item: C) {
         emptyBuffers.wait()
         

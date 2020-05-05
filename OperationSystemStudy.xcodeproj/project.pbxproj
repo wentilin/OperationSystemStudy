@@ -11,6 +11,9 @@
 		D7150AC7245EF1E900849E70 /* PetersonMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AC6245EF1E900849E70 /* PetersonMutex.swift */; };
 		D7150AC9245F017C00849E70 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AC8245F017C00849E70 /* SpinLock.swift */; };
 		D7150ACF24610D9900849E70 /* BoundedBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150ACE24610D9900849E70 /* BoundedBuffer.swift */; };
+		D7150AE124613BF700849E70 /* _BoundedBufferSemaphoreImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AE024613BF700849E70 /* _BoundedBufferSemaphoreImp.swift */; };
+		D7150AE62461435000849E70 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AE52461435000849E70 /* Util.swift */; };
+		D7150AE8246144CB00849E70 /* _BoundedBufferConditionImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7150AE7246144CB00849E70 /* _BoundedBufferConditionImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +35,9 @@
 		D7150AC8245F017C00849E70 /* SpinLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 		D7150ACE24610D9900849E70 /* BoundedBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedBuffer.swift; sourceTree = "<group>"; };
 		D7150AD72461121500849E70 /* OperationSystemStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OperationSystemStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7150AE024613BF700849E70 /* _BoundedBufferSemaphoreImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BoundedBufferSemaphoreImp.swift; sourceTree = "<group>"; };
+		D7150AE52461435000849E70 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		D7150AE7246144CB00849E70 /* _BoundedBufferConditionImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _BoundedBufferConditionImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +78,31 @@
 		D7150ABE245EF1CA00849E70 /* OperationSystemStudy */ = {
 			isa = PBXGroup;
 			children = (
+				D7150AE42461433F00849E70 /* Util */,
+				D7150ADF2461387D00849E70 /* ProducerAndConsumer */,
 				D7150ABF245EF1CA00849E70 /* main.swift */,
 				D7150AC6245EF1E900849E70 /* PetersonMutex.swift */,
 				D7150AC8245F017C00849E70 /* SpinLock.swift */,
-				D7150ACE24610D9900849E70 /* BoundedBuffer.swift */,
 			);
 			path = OperationSystemStudy;
+			sourceTree = "<group>";
+		};
+		D7150ADF2461387D00849E70 /* ProducerAndConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				D7150ACE24610D9900849E70 /* BoundedBuffer.swift */,
+				D7150AE024613BF700849E70 /* _BoundedBufferSemaphoreImp.swift */,
+				D7150AE7246144CB00849E70 /* _BoundedBufferConditionImp.swift */,
+			);
+			path = ProducerAndConsumer;
+			sourceTree = "<group>";
+		};
+		D7150AE42461433F00849E70 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D7150AE52461435000849E70 /* Util.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +195,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7150AC9245F017C00849E70 /* SpinLock.swift in Sources */,
+				D7150AE124613BF700849E70 /* _BoundedBufferSemaphoreImp.swift in Sources */,
 				D7150ACF24610D9900849E70 /* BoundedBuffer.swift in Sources */,
+				D7150AE62461435000849E70 /* Util.swift in Sources */,
+				D7150AE8246144CB00849E70 /* _BoundedBufferConditionImp.swift in Sources */,
 				D7150AC0245EF1CA00849E70 /* main.swift in Sources */,
 				D7150AC7245EF1E900849E70 /* PetersonMutex.swift in Sources */,
 			);
