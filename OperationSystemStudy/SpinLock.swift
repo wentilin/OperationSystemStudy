@@ -23,6 +23,7 @@ class SpinLock {
 }
 
 // cpu提供的原子性操作
+// FIXME: 这里似乎不是原子性，有概率造成死循环
 private func _testAndSet(value: inout Bool) -> Bool {
     let old = value
     value = true

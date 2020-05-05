@@ -57,4 +57,22 @@ class SpinLockTest {
     }
 }
 
+print("----------test bounded buffer------------")
+let boundedBuffer = BoundedBuffer<Int>(capacity: 10)
 
+queue.addOperation {
+    for i in 0..<10 {
+        boundedBuffer.deposite(i)
+        print("deposite item(\(i))")
+    }
+}
+
+queue.addOperation {
+    for _ in 0..<10 {
+        let item = boundedBuffer.remove()
+        print("remove item(\(item))")
+        sleep(1)
+    }
+}
+
+queue.waitUntilAllOperationsAreFinished()
